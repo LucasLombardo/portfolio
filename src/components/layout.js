@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from './nav'
 import Container from './container'
-import './layout.css'
+import '../styles/normalize.css'
 
 const Layout = ({ children }) => (
   <>

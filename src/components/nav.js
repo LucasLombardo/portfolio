@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import Container from './container'
-import './layout.css'
 
 const NAV_QUERY = graphql`
   query NAV_QUERY {
