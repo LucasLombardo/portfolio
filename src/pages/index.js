@@ -23,8 +23,8 @@ export default class IndexPage extends Component {
   }
 }
 
-export const pageQuery = graphql`
-  query {
+export const INDEX_QUERY = graphql`
+  query INDEX_QUERY {
     wordpressPage(slug: { eq: "home" }) {
       content
     }

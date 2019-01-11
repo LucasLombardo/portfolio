@@ -1,26 +1,32 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import PostList from '../components/postList'
 
-class PageTemplate extends Component {
+class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
     return (
       <Layout>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <p>
-          Published: {post.date} Modified: {post.modified}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className="post-template">
+          <div>
+            <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+            <p>
+              Published: {post.date} Modified: {post.modified}
+            </p>
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
+          <PostList />
+        </div>
       </Layout>
     )
   }
 }
 
-export default PageTemplate
+export default PostTemplate
 
-export const POST_PAGE_QUERY = graphql`
-  query($id: String!) {
+export const POST_TEMPLATE_QUERY = graphql`
+  query POST_TEMPLATE_QUERY($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
       content

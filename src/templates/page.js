@@ -8,9 +8,6 @@ class PageTemplate extends Component {
     return (
       <Layout>
         <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-        <p>
-          Published: {currentPage.date} Modified: {currentPage.modified}
-        </p>
         <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
       </Layout>
     )
@@ -19,20 +16,12 @@ class PageTemplate extends Component {
 
 export default PageTemplate
 
-export const pageQuery = graphql`
-  query($id: String!) {
+export const PAGE_TEMPLATE_QUERY = graphql`
+  query PAGE_TEMPLATE_QUERY($id: String!) {
     wordpressPage(id: { eq: $id }) {
       title
       content
       slug
-      date(formatString: "MMMM DD, YYYY")
-      modified(formatString: "MMMM DD, YYYY")
-    }
-    site {
-      id
-      siteMetadata {
-        title
-      }
     }
   }
 `

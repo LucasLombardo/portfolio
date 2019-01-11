@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import Container from './container'
 
@@ -16,28 +16,23 @@ const NAV_QUERY = graphql`
   }
 `
 
-export default class Nav extends Component {
-  render() {
-    return (
-      <StaticQuery
-        query={NAV_QUERY}
-        render={data => (
-          <nav>
-            <Container>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                {data.allWordpressPage.edges.map(({ node }) => (
-                  <Link
-                    to={node.slug === 'home' ? '' : node.slug}
-                    key={node.id}
-                  >
-                    {node.title}
-                  </Link>
-                ))}
-              </div>
-            </Container>
-          </nav>
-        )}
-      />
-    )
-  }
-}
+const Nav = () => (
+  <StaticQuery
+    query={NAV_QUERY}
+    render={data => (
+      <nav>
+        <Container>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            {data.allWordpressPage.edges.map(({ node }) => (
+              <Link to={node.slug === 'home' ? '' : node.slug} key={node.id}>
+                {node.title}
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </nav>
+    )}
+  />
+)
+
+export default Nav
