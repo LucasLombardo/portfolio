@@ -1,9 +1,0 @@
-.post-template {
-  display: flex;
-}
-.post-template > div {
-  flex: 1;
-}
-aside {
-  margin: 3em 0 0 1em;
-}

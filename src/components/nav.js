@@ -2,20 +2,6 @@ import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import Container from './container'
 
-const NAV_QUERY = graphql`
-  query NAV_QUERY {
-    allWordpressPage(sort: { fields: date, order: ASC }) {
-      edges {
-        node {
-          id
-          slug
-          title
-        }
-      }
-    }
-  }
-`
-
 const Nav = () => (
   <StaticQuery
     query={NAV_QUERY}
@@ -34,5 +20,18 @@ const Nav = () => (
     )}
   />
 )
+const NAV_QUERY = graphql`
+  query NAV_QUERY {
+    allWordpressPage(sort: { fields: date, order: ASC }) {
+      edges {
+        node {
+          id
+          slug
+          title
+        }
+      }
+    }
+  }
+`
 
 export default Nav

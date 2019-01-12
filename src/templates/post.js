@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
-import PostList from '../components/postList'
+import RecentPosts from '../components/recentPosts'
 
 class PostTemplate extends Component {
   render() {
@@ -16,7 +16,7 @@ class PostTemplate extends Component {
             </p>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
-          <PostList />
+          <RecentPosts />
         </div>
       </Layout>
     )

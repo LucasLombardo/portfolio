@@ -1,22 +1,7 @@
 import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 
-const RECENT_POSTS_QUERY = graphql`
-  query RECENT_POSTS_QUERY {
-    allWordpressPost(sort: { fields: date, order: DESC }, limit: 5) {
-      edges {
-        node {
-          id
-          slug
-          title
-          date(formatString: "YYYY MMMM DD")
-        }
-      }
-    }
-  }
-`
-
-const PostList = () => (
+const RecentPosts = () => (
   <StaticQuery
     query={RECENT_POSTS_QUERY}
     render={data => (
@@ -34,4 +19,19 @@ const PostList = () => (
   />
 )
 
-export default PostList
+const RECENT_POSTS_QUERY = graphql`
+  query RECENT_POSTS_QUERY {
+    allWordpressPost(sort: { fields: date, order: DESC }, limit: 5) {
+      edges {
+        node {
+          id
+          slug
+          title
+          date(formatString: "YYYY MMMM DD")
+        }
+      }
+    }
+  }
+`
+
+export default RecentPosts
