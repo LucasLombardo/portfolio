@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 export default class IndexPage extends Component {
   render() {
     return (
-      <Layout>
+      <Layout isHome={true}>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Header />
         <About />

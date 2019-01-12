@@ -3,9 +3,9 @@ import Nav from './nav'
 import Footer from './footer'
 import '../main.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, isHome }) => (
   <>
-    <Nav />
+    <Nav isHome={isHome} />
     {children}
     <Footer />
   </>
