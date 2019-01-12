@@ -25,6 +25,23 @@ export const ScHeader = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  svg {
+    position: absolute;
+    fill: #fff;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 50px;
+    margin-left: -25px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      fill: #3dc5ad;
+    }
+  }
+
   &:after {
     content: '';
     display: block;
