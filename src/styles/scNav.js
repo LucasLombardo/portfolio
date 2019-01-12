@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ScNav = styled.div`
   color: #fff;
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
   left: 0;
