@@ -228,3 +228,7 @@ button {
   font-size: 0.75rem;
   line-height: 3.075rem;
 }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
