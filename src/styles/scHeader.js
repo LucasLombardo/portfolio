@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ScHeader = styled.div`
   min-height: 100vh;
   background-color: #333;
-  background: url(https://imagizer.imageshack.us/a/img922/4703/xqmaKB.jpg)
+  background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/road-to-zion-by-tyson-dudley.jpg)
     no-repeat center center fixed;
   background-size: cover;
   overflow: auto;
@@ -17,6 +17,7 @@ export const ScHeader = styled.div`
     position: relative;
     z-index: 2;
     padding: 2.8em 0.5em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
     h1 {
       margin-bottom: 0.3rem;
     }
