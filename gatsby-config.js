@@ -33,7 +33,7 @@ module.exports = {
           htaccess_sendImmediately: false,
         },
         // for debugging
-        verboseOutput: true,
+        verboseOutput: false,
         // how many pages retrieved per API request
         perPage: 100,
         // Set how many simultaneous requests are sent at once.
