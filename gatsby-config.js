@@ -25,15 +25,15 @@ module.exports = {
         baseUrl: 'https://blog.qzcn.co',
         protocol: 'https',
         hostingWPCOM: false,
-        useACF: false,
-        acfOptionPageIds: [],
+        useACF: true,
+        acfOptionPageIds: ['home'],
         auth: {
           htaccess_user: process.env.WORDPRESS_USER,
           htaccess_pass: process.env.WORDPRESS_PASSWORD,
           htaccess_sendImmediately: false,
         },
         // for debugging
-        verboseOutput: false,
+        verboseOutput: true,
         // how many pages retrieved per API request
         perPage: 100,
         // Set how many simultaneous requests are sent at once.

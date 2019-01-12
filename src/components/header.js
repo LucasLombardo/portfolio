@@ -7,10 +7,10 @@ const Header = () => (
     <StaticQuery
       query={HOME_PAGE_QUERY}
       render={({ wordpressPage }) => (
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: wordpressPage.content }}
-        />
+        <div className="content">
+          <h1>{wordpressPage.acf.header_title}</h1>
+          <p>{wordpressPage.acf.header_subtitle}</p>
+        </div>
       )}
     />
   </ScHeader>
@@ -19,7 +19,10 @@ const Header = () => (
 const HOME_PAGE_QUERY = graphql`
   query HOME_PAGE_QUERY {
     wordpressPage(slug: { eq: "home" }) {
-      content
+      acf {
+        header_title
+        header_subtitle
+      }
     }
   }
 `
