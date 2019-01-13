@@ -73,13 +73,16 @@ exports.createPages = ({ graphql, actions }) => {
       }
       const postTemplate = path.resolve(`./src/templates/post.js`)
       _.each(result.data.allWordpressPost.edges, edge => {
-        createPage({
-          path: edge.node.slug,
-          component: slash(postTemplate),
-          context: {
-            id: edge.node.id,
-          },
-        })
+        if (edge.node.format !== 'aside') {
+          // Asides will be used for projects
+          createPage({
+            path: edge.node.slug,
+            component: slash(postTemplate),
+            context: {
+              id: edge.node.id,
+            },
+          })
+        }
       })
       resolve()
     })

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import RecentPosts from '../components/recentPosts'
 import Header from '../components/header'
 import About from '../components/about'
 import Skills from '../components/skills'
+import Projects from '../components/projects'
 import SEO from '../components/seo'
 
 export default class IndexPage extends Component {
@@ -14,7 +14,7 @@ export default class IndexPage extends Component {
         <Header />
         <About />
         <Skills />
-        <RecentPosts />
+        <Projects />
       </Layout>
     )
   }
