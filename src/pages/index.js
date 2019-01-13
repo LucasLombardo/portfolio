@@ -4,6 +4,7 @@ import Header from '../components/header'
 import About from '../components/about'
 import Skills from '../components/skills'
 import Projects from '../components/projects'
+import Contact from '../components/Contact'
 import SEO from '../components/seo'
 
 export default class IndexPage extends Component {
@@ -15,6 +16,7 @@ export default class IndexPage extends Component {
         <About />
         <Skills />
         <Projects />
+        <Contact />
       </Layout>
     )
   }
