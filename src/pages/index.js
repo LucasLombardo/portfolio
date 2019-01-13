@@ -4,7 +4,7 @@ import Header from '../components/header'
 import About from '../components/about'
 import Skills from '../components/skills'
 import Projects from '../components/projects'
-import Contact from '../components/Contact'
+import Contact from '../components/contact'
 import SEO from '../components/seo'
 
 export default class IndexPage extends Component {
