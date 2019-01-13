@@ -12,12 +12,14 @@ const Project = ({
       <a href={link} target="_blank" rel="noopener noreferrer">
         <h3>{title}</h3>
       </a>
-      <p className="description">{description}</p>
       <p className="tags">
         {tags.split(',').map(tag => (
-          <span key={tag}>{tag}</span>
+          <li key={tag}>
+            <span>{tag}</span>
+          </li>
         ))}
       </p>
+      <p className="description">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <Button>View Live Project</Button>
       </a>

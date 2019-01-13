@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ScProjects = styled.section`
-  padding: 5rem 0;
+  padding: 6rem 0 8rem 0;
   color: #fff;
   background: #292f33;
   header {
@@ -20,14 +20,40 @@ export const ScProjects = styled.section`
   .project {
     display: flex;
     align-items: center;
-    margin-top: 3.5rem;
-
+    margin-top: 5rem;
+    h3 {
+      transition: 0.2s;
+      letter-spacing: 0.15rem;
+      &:hover {
+        color: #3dc5ad;
+      }
+    }
+    li {
+      display: inline-block;
+      transform: skew(-10deg);
+      background: rgba(0, 0, 0, 0.15);
+      margin-right: 0.4rem;
+      span {
+        margin: 0.3rem;
+        font-size: 0.65rem;
+        color: #3dc5ad;
+        display: block;
+        text-decoration: none;
+        padding: 0 0.5rem;
+      }
+    }
     img {
       margin: 0 3rem 0 0;
-      max-width: 400px;
+      max-width: 500px;
       border-radius: 4px;
+      transition: 0.2s;
+      @media only screen and (max-width: 1200px) {
+        max-width: 400px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
     }
-
     .project-info {
       button {
         margin: 1rem 1rem 1rem 0;
