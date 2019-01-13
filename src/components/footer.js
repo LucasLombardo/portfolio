@@ -15,27 +15,27 @@ const Footer = () => (
       render={({ wordpressPage: { acf } }) => (
         <>
           {acf.twitter && (
-            <a href={acf.twitter} target="_blank">
+            <a href={acf.twitter} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'twitter']} />
             </a>
           )}
           {acf.github && (
-            <a href={acf.github} target="_blank">
+            <a href={acf.github} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'github']} />
             </a>
           )}
           {acf.codepen && (
-            <a href={acf.codepen} target="_blank">
+            <a href={acf.codepen} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'codepen']} />
             </a>
           )}
           {acf.linkedin && (
-            <a href={acf.linkedin} target="_blank">
+            <a href={acf.linkedin} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
             </a>
           )}
           {acf.email && (
-            <a href={acf.email} target="_blank">
+            <a href={acf.email} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
           )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, Link, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import { ScProjects } from '../styles'
 import Project from './project'
 import Container from './container'
@@ -14,9 +14,7 @@ const Projects = () => (
             <h2>Projects</h2>
           </header>
           {edges.map(({ node }) => (
-            <>
-              <Project info={node.acf} />
-            </>
+            <Project info={node.acf} key={node.id} />
           ))}
         </Container>
       </ScProjects>
@@ -30,6 +28,7 @@ const PROJECT_POST_QUERY = graphql`
     allWordpressPost(filter: { format: { eq: "aside" } }) {
       edges {
         node {
+          id
           acf {
             title
             thumbnail
