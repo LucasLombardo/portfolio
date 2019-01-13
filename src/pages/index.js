@@ -11,11 +11,17 @@ export default class IndexPage extends Component {
   render() {
     return (
       <Layout isHome={true}>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          title="Home"
+          keywords={[`Lucas Lombardo`, `Portfolio`, `Web Development`]}
+        />
         <Header />
+        <a id="About" />
         <About />
         <Skills />
+        <a id="Work" />
         <Projects />
+        <a id="Contact" />
         <Contact />
       </Layout>
     )

@@ -5,7 +5,7 @@ import Project from './project'
 import Container from './container'
 
 const Projects = () => (
-  <ScProjects id="work">
+  <ScProjects>
     <StaticQuery
       query={PROJECT_POST_QUERY}
       render={({ allWordpressPost: { edges } }) => (
