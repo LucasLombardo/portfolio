@@ -5,10 +5,10 @@ import Project from './project'
 import Container from './container'
 
 const Projects = () => (
-  <StaticQuery
-    query={PROJECT_POST_QUERY}
-    render={({ allWordpressPost: { edges } }) => (
-      <ScProjects>
+  <ScProjects id="work">
+    <StaticQuery
+      query={PROJECT_POST_QUERY}
+      render={({ allWordpressPost: { edges } }) => (
         <Container>
           <header>
             <h2>Projects</h2>
@@ -17,9 +17,9 @@ const Projects = () => (
             <Project info={node.acf} key={node.id} />
           ))}
         </Container>
-      </ScProjects>
-    )}
-  />
+      )}
+    />
+  </ScProjects>
 )
 
 // Posts saved as Format: aside

@@ -6,7 +6,7 @@ import Button from './button'
 import Container from './container'
 
 const About = () => (
-  <ScAbout>
+  <ScAbout id="about">
     <StaticQuery
       query={ABOUT_SECTION_QUERY}
       render={({ wordpressPage: { acf } }) => (

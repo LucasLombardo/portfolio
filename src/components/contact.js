@@ -17,7 +17,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <ScContact>
+      <ScContact id="contact">
         <Container>
           <form>
             <header>
