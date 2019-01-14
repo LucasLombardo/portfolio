@@ -36,4 +36,9 @@ export const ScSkills = styled.section`
       }
     }
   }
+  @media screen and (max-width: 680px) {
+    .skills-wrapper {
+      flex-direction: column !important;
+    }
+  }
 `
