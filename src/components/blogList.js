@@ -44,7 +44,7 @@ const BLOG_LIST_QUERY = graphql`
             id
             slug
           }
-          date(formatString: "YYYY MMMM DD")
+          date(formatString: "MMMM DDDo, YYYY")
         }
       }
     }

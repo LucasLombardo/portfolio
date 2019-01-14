@@ -17,7 +17,7 @@ class PostTemplate extends Component {
             <header>
               <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
               <p>
-                Published: {post.date} Modified: {post.modified}
+                Published: {post.date}, Modified: {post.modified}
               </p>
             </header>
             <div className="post-body">
@@ -47,8 +47,8 @@ export const POST_TEMPLATE_QUERY = graphql`
       title
       content
       slug
-      date(formatString: "MMMM DD, YYYY")
-      modified(formatString: "MMMM DD, YYYY")
+      date(formatString: "MMMM DDDo, YYYY")
+      modified(formatString: "MMMM DDDo, YYYY")
     }
   }
 `
