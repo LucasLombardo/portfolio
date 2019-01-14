@@ -21,16 +21,21 @@ class PostTemplate extends Component {
               </p>
             </header>
             <div className="post-body">
-              <div
-                className="post-content"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-              <Link to="/blog">
-                <Button>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                  Back to Blog
-                </Button>
-              </Link>
+              {post.acf.featured_image && (
+                <img src={post.acf.featured_image} alt="" />
+              )}
+              <div className="post-text">
+                <div
+                  className="post-content"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+                <Link to="/blog">
+                  <Button>
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                    Back to Blog
+                  </Button>
+                </Link>
+              </div>
             </div>
           </Container>
         </ScPost>
@@ -49,6 +54,9 @@ export const POST_TEMPLATE_QUERY = graphql`
       slug
       date(formatString: "MMMM DDDo, YYYY")
       modified(formatString: "MMMM DDDo, YYYY")
+      acf {
+        featured_image
+      }
     }
   }
 `

@@ -24,18 +24,26 @@ export const ScPost = styled.main`
   }
   .post-body {
     background: #fff;
-    padding: 2rem 3rem;
     border-radius: 4px;
-    .post-content {
-      padding-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: relative;
+    img {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
     }
-    button {
-      display: block;
-      margin: 1rem auto;
-      line-height: 2.6rem;
-      padding: 0 1.6rem;
-      .svg-inline--fa.fa-w-14 {
-        margin-right: 0.4rem;
+    .post-text {
+      padding: 2rem 3rem;
+      .post-content {
+        padding-bottom: 1.5rem;
+      }
+      button {
+        display: block;
+        margin: 1rem auto;
+        line-height: 2.6rem;
+        padding: 0 1.6rem;
+        .svg-inline--fa.fa-w-14 {
+          margin-right: 0.4rem;
+        }
       }
     }
   }
