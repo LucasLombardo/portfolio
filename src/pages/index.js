@@ -22,7 +22,7 @@ export default class IndexPage extends Component {
         <a id="Work" />
         <Projects />
         <a id="Contact" />
-        <Contact />
+        <Contact action="/thanks/" />
       </Layout>
     )
   }
