@@ -50,6 +50,9 @@ export const ScProjects = styled.section`
       @media only screen and (max-width: 1200px) {
         max-width: 400px;
       }
+      @media only screen and (max-width: 1024px) {
+        max-width: 330px;
+      }
       &:hover {
         opacity: 0.8;
       }
@@ -68,6 +71,36 @@ export const ScProjects = styled.section`
       flex-direction: row-reverse;
       img {
         margin: 0 0 0 3rem;
+      }
+    }
+
+    @media only screen and (max-width: 880px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-items: center;
+      max-width: 500px;
+      margin: 6rem auto;
+      &:first-of-type {
+        margin-top: 5rem;
+      }
+      a > img {
+        max-width: 100%;
+        margin: 0 !important;
+      }
+    }
+    @media only screen and (max-width: 480px) {
+      button {
+        margin: 1rem 0.4rem 1rem 0;
+        line-height: 2.6rem;
+        font-size: 0.6rem;
+        padding: 0 1rem;
+      }
+    }
+    @media only screen and (max-width: 350px) {
+      button {
+        margin: 1rem 0;
+        font-size: 0.5rem;
+        padding: 0;
       }
     }
   }

@@ -60,7 +60,7 @@ module.exports = {
         background_color: `#326eac`,
         theme_color: `#326eac`,
         display: `minimal-ui`,
-        icon: `src/images/wordpress.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     `gatsby-plugin-styled-components`,
