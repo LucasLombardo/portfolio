@@ -21,4 +21,8 @@ export const ScAbout = styled.section`
   h2 {
     font-size: 2.3rem;
   }
+  .svg-inline--fa.fa-w-14,
+  .svg-inline--fa.fa-w-16 {
+    margin-left: 0.4rem;
+  }
 `
