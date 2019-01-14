@@ -50,7 +50,7 @@ export const ScHeader = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.625),

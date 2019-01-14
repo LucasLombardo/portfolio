@@ -3,7 +3,9 @@ import { ScCard } from '../styles/'
 
 const Card = ({ src, title, content, thumbnailLeft, children }) => (
   <ScCard className={thumbnailLeft ? 'left' : 'right'}>
-    <img src={src} alt={title} />
+    <div className="image-wrapper">
+      <img src={src} alt={title} />
+    </div>
     <div className="content">
       {title && <h3>{title}</h3>}
       {content && <div dangerouslySetInnerHTML={{ __html: content }} />}

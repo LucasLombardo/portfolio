@@ -8,12 +8,20 @@ export const ScCard = styled.div`
   align-items: center;
   text-align: left;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
-  img {
-    max-height: 400px;
-    border-radius: 4px 0 0 4px;
+  min-width: 250px;
+  .image-wrapper {
+    height: 400px;
+    flex-basis: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s;
+    img {
+      border-radius: 4px 0 0 4px;
+    }
   }
   .content {
     padding: 0.5rem 3rem;
+    flex: 1 1 0;
     h3 {
       font-size: 1.1rem;
     }
@@ -32,6 +40,75 @@ export const ScCard = styled.div`
     flex-direction: row-reverse;
     img {
       border-radius: 0 4px 4px 0;
+    }
+  }
+
+  @media screen and (max-width: 1160px) {
+    .image-wrapper {
+      flex-basis: 330px;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    .image-wrapper {
+      flex-basis: 230px;
+      img {
+      }
+    }
+    .content {
+      h3 {
+        font-size: 0.95rem;
+      }
+    }
+  }
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    &.right {
+      flex-direction: column;
+    }
+    .image-wrapper {
+      width: 100%;
+      flex-basis: 320px;
+      img {
+        width: 100%;
+        position: absolute;
+        top: -50%;
+      }
+    }
+    .content {
+      padding: 3.6rem 3rem;
+      h3 {
+      }
+      p {
+      }
+      .card-footer {
+        button {
+        }
+      }
+    }
+    @media screen and (max-width: 620px) {
+      .image-wrapper {
+        flex-basis: 250px;
+      }
+    }
+    .content .card-footer {
+      display: flex;
+      justify-content: center;
+      button {
+        margin: 2rem 0.4rem 1rem 0.4rem;
+        line-height: 2.6rem;
+        font-size: 0.7rem;
+        padding: 0 1.2rem;
+      }
+    }
+    @media screen and (max-width: 440px) {
+      .image-wrapper {
+        flex-basis: 180px;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      .image-wrapper {
+        flex-basis: 140px;
+      }
     }
   }
 `
