@@ -21,11 +21,15 @@ const Project = ({
       </p>
       <p className="description">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <Button>View Live Project</Button>
+        <Button>Live Project</Button>
       </a>
-      <a href={code_link} target="_blank" rel="noopener noreferrer">
-        <Button btnType="secondary">View Project Code</Button>
-      </a>
+      {code_link ? (
+        <a href={code_link} target="_blank" rel="noopener noreferrer">
+          <Button btnType="secondary">Project Code</Button>
+        </a>
+      ) : (
+        <p className="no-code">Private Repo, code available on request</p>
+      )}
     </div>
   </div>
 )

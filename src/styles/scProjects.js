@@ -66,6 +66,12 @@ export const ScProjects = styled.section`
           box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
         }
       }
+      .no-code {
+        display: inline;
+        opacity: 0.6;
+        font-size: 0.75rem;
+        font-style: italic;
+      }
     }
     &:nth-of-type(even) {
       flex-direction: row-reverse;

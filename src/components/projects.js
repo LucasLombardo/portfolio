@@ -25,7 +25,10 @@ const Projects = () => (
 // Posts saved as Format: aside
 const PROJECT_POST_QUERY = graphql`
   query PROJECT_POST_QUERY {
-    allWordpressPost(filter: { format: { eq: "aside" } }) {
+    allWordpressPost(
+      filter: { format: { eq: "aside" } }
+      sort: { fields: date, order: ASC }
+    ) {
       edges {
         node {
           id
