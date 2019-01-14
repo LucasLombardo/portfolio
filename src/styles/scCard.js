@@ -15,9 +15,7 @@ export const ScCard = styled.div`
     position: relative;
     overflow: hidden;
     transition: 0.2s;
-    img {
-      border-radius: 4px 0 0 4px;
-    }
+    border-radius: 4px 0 0 4px;
   }
   .content {
     padding: 0.5rem 3rem;
@@ -38,7 +36,7 @@ export const ScCard = styled.div`
   }
   &.right {
     flex-direction: row-reverse;
-    img {
+    .image-wrapper {
       border-radius: 0 4px 4px 0;
     }
   }
@@ -61,13 +59,18 @@ export const ScCard = styled.div`
     }
   }
   @media screen and (max-width: 820px) {
+    /* Image breaks into seperate row */
     flex-direction: column;
     &.right {
       flex-direction: column;
+      .image-wrapper {
+        border-radius: 4px 4px 0 0;
+      }
     }
     .image-wrapper {
       width: 100%;
       flex-basis: 320px;
+      border-radius: 4px 4px 0 0;
       img {
         width: 100%;
         position: absolute;
