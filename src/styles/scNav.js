@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ScNav = styled.div`
   position: fixed;
-  background: #fff;
+  background-color: #fff;
   color: #3f3f3f;
   z-index: 2;
   top: 0;
@@ -12,6 +12,7 @@ export const ScNav = styled.div`
   justify-content: left;
   padding: 1rem 1.5rem;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.125);
+  transition: background-color 0.2s;
   a {
     margin: 0 0 0 1.5rem;
     transition: 0.3s;
@@ -24,10 +25,13 @@ export const ScNav = styled.div`
   a:hover {
     color: #3dc5ad;
   }
-  &.home {
+  &.home:not(.fixed) {
     position: absolute;
     color: #fff;
-    background: transparent;
+    background-color: transparent;
     box-shadow: none;
+  }
+  &.fixed {
+    position: fixed;
   }
 `

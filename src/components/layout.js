@@ -5,7 +5,7 @@ import '../main.css'
 
 const Layout = ({ children, isHome }) => (
   <>
-    <Nav isHome={isHome} />
+    <Nav isHome={isHome} fixedBelowId="#About" />
     {children}
     <Footer />
   </>
