@@ -40,6 +40,7 @@ export const ScContact = styled.section`
     box-sizing: border-box;
     font-style: italic;
     color: #b2aaaa;
+    box-shadow: none;
     &::placeholder {
       color: #b2aaaa;
     }
