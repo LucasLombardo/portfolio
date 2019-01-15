@@ -34,11 +34,11 @@ export default class About extends Component {
                 src={acf.about_sec1_thumbnail}
                 title={acf.about_sec1_title}
                 content={acf.about_sec1_content}
-                thumbnailLeft={true}
+                right={false}
               />
               <Card
                 src={acf.about_sec2_thumbnail}
-                thumbnailLeft={false}
+                right={true}
                 title={acf.about_sec2_title}
                 content={acf.about_sec2_content}
               >

@@ -4,9 +4,13 @@ import ScrollAnimation from 'react-animate-on-scroll'
 
 const Project = ({
   info: { title, thumbnail, description, link, tags, code_link },
+  right,
 }) => (
-  <ScrollAnimation animateIn="rotate-in" animateOnce={true}>
-    <div className="project">
+  <ScrollAnimation
+    animateIn={right ? 'rotate-in-right' : 'rotate-in-left'}
+    animateOnce={true}
+  >
+    <div className={right ? 'project right' : 'project'}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img src={thumbnail} alt={title} />
       </a>

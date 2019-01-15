@@ -2,9 +2,12 @@ import React from 'react'
 import { ScCard } from '../styles/'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-const Card = ({ src, title, content, thumbnailLeft, children }) => (
-  <ScrollAnimation animateIn="rotate-in" animateOnce={true}>
-    <ScCard className={thumbnailLeft ? 'left' : 'right'}>
+const Card = ({ src, title, content, right, children }) => (
+  <ScrollAnimation
+    animateIn={right ? 'rotate-in-right' : 'rotate-in-left'}
+    animateOnce={true}
+  >
+    <ScCard className={right ? 'right' : 'left'}>
       <div className="image-wrapper">
         <img src={src} alt={title} />
       </div>

@@ -73,7 +73,7 @@ export const ScProjects = styled.section`
         font-style: italic;
       }
     }
-    &:nth-of-type(even) {
+    &.right {
       flex-direction: row-reverse;
       img {
         margin: 0 0 0 3rem;

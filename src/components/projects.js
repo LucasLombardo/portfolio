@@ -13,8 +13,12 @@ const Projects = () => (
           <header>
             <h2>Projects</h2>
           </header>
-          {edges.map(({ node }) => (
-            <Project info={node.acf} key={node.id} />
+          {edges.map(({ node }, i) => (
+            <Project
+              info={node.acf}
+              key={node.id}
+              right={i % 2 === 0 ? '' : 'right'}
+            />
           ))}
         </Container>
       )}
@@ -27,7 +31,7 @@ const PROJECT_POST_QUERY = graphql`
   query PROJECT_POST_QUERY {
     allWordpressPost(
       filter: { format: { eq: "aside" } }
-      sort: { fields: date, order: ASC }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
