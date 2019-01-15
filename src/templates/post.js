@@ -6,8 +6,14 @@ import Button from '../components/button'
 import { ScPost } from '../styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import Prism from 'prismjs'
+import '../prism.css'
 
 class PostTemplate extends Component {
+  componentDidMount() {
+    Prism.highlightAll()
+  }
+
   render() {
     const post = this.props.data.wordpressPost
     return (
