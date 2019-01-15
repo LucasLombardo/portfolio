@@ -1,14 +1,10 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'gatsby'
 import { ScNav } from '../styles'
-/* eslint-disable */
-// anchor links are to positions, no href needed
-// TODO - check into screen reader a11y of this
 
-export default class nav extends PureComponent {
+export default class Nav extends PureComponent {
   state = {
-    fixed: false,
-    isOpen: false,
+    absolute: true,
   }
 
   componentDidMount() {
@@ -16,57 +12,48 @@ export default class nav extends PureComponent {
       window.addEventListener('scroll', this.handleScroll)
     }
   }
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
   }
-
   handleScroll = () => {
-    if (
-      document.querySelector(this.props.fixedBelowId).offsetTop <
-      window.pageYOffset + 60
-    ) {
-      this.setState({ fixed: true })
+    // sets state to absolute if below the About section
+    if (document.querySelector('#About').offsetTop < window.pageYOffset + 60) {
+      this.setState({ absolute: false })
     } else {
-      this.setState({ fixed: false })
+      this.setState({ absolute: true })
     }
   }
 
-  toggleNav = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  scrollToID = id => {
-    const currPos = window.pageYOffset
-    const top = id ? document.querySelector(id).offsetTop : 0
-    // if distance to scroll over 2400px, jump there rather than scrolling
-    const behavior = Math.abs(top - currPos) > 2400 ? 'auto' : 'smooth'
-    window.scrollTo({ top, behavior })
+  scrollToID = (e, id) => {
+    // scrolls to given ID if on homepage
+    if (this.props.isHome) {
+      e.preventDefault()
+      const currPos = window.pageYOffset
+      const top = id ? document.querySelector(id).offsetTop : 0
+      // if distance to scroll over 2400px, jump there rather than scrolling
+      const behavior = Math.abs(top - currPos) > 2400 ? 'auto' : 'smooth'
+      window.scrollTo({ top, behavior })
+    }
   }
 
   render() {
-    const { isHome } = this.props
-    const { fixed } = this.state
-    const navClasses = isHome ? (fixed ? 'home fixed' : 'home') : ''
+    const home = this.props.isHome ? 'home' : ''
+    const absolute = this.state.absolute ? 'absolute' : ''
     return (
-      <ScNav className={navClasses}>
-        {isHome ? (
-          <>
-            <a onClick={() => this.scrollToID('')}>Lucas Lombardo</a>
-            <a onClick={() => this.scrollToID('#About')}>About</a>
-            <a onClick={() => this.scrollToID('#Work')}>Work</a>
-            <Link to="/blog">Blog</Link>
-            <a onClick={() => this.scrollToID('#Contact')}>Contact</a>
-          </>
-        ) : (
-          <>
-            <Link to="/">Lucas Lombardo</Link>
-            <Link to="/#About">About</Link>
-            <Link to="/#Work">Work</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/#Contact">Contact</Link>
-          </>
-        )}
+      <ScNav className={`${home} ${absolute}`}>
+        <Link to="/" onClick={e => this.scrollToID(e, '')}>
+          Lucas Lombardo
+        </Link>
+        <Link to="/#About" onClick={e => this.scrollToID(e, '#About')}>
+          About
+        </Link>
+        <Link to="/#Work" onClick={e => this.scrollToID(e, '#Work')}>
+          Work
+        </Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/#Contact" onClick={e => this.scrollToID(e, '#Contact')}>
+          Contact
+        </Link>
       </ScNav>
     )
   }
