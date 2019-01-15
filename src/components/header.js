@@ -12,6 +12,10 @@ const SvgChevron = () => (
   </svg>
 )
 
+/* eslint-disable */
+// anchor links are to positions, no href needed
+// TODO - check into screen reader a11y of this
+
 export default class Header extends Component {
   scrollToAbout = () => {
     window.scrollTo({

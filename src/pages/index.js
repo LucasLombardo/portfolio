@@ -7,6 +7,8 @@ import Projects from '../components/projects'
 import Contact from '../components/contact'
 import SEO from '../components/seo'
 
+/* eslint-disable */
+// anchor tags being used for reference, no accessibility problem
 export default class IndexPage extends Component {
   render() {
     return (

@@ -7,6 +7,10 @@ import Container from './container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
+/* eslint-disable */
+// anchor links are to positions, no href needed
+// TODO - check into screen reader a11y of this
+
 export default class About extends Component {
   scrollToWork = () => {
     window.scrollTo({

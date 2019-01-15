@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Link } from 'gatsby'
 import { ScNav } from '../styles'
+/* eslint-disable */
+// anchor links are to positions, no href needed
+// TODO - check into screen reader a11y of this
 
-export default class nav extends Component {
+export default class nav extends PureComponent {
   state = {
     fixed: false,
     isOpen: false,
