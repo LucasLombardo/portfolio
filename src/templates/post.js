@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import Container from '../components/container'
+import SEO from '../components/seo'
 import Button from '../components/button'
 import { ScPost } from '../styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,6 +19,22 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost
     return (
       <Layout>
+        <SEO
+          title={`Blog title="${post.title}"`}
+          keywords={[
+            `lucas lombardo`,
+            `blog`,
+            `react`,
+            `web development`,
+            `javascript`,
+            `jamstack`,
+            `gatsby`,
+            `developer`,
+            `boston`,
+            `coding`,
+          ]}
+          description={post.title}
+        />
         <ScPost>
           <Container>
             <header>
@@ -62,6 +79,7 @@ export const POST_TEMPLATE_QUERY = graphql`
       modified(formatString: "MMMM DDDo, YYYY")
       acf {
         featured_image
+        excerpt
       }
     }
   }

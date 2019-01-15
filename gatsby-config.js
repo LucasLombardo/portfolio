@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Headless Wordpress Blog`,
-    description: `Baseline Headless Wordpress Blog Starter`,
+    title: `Lucas Lombardo`,
+    description: `Web developer and JavaScript enthusiast based in Boston.`,
     author: `Lucas Lombardo`,
   },
   plugins: [
@@ -54,8 +54,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `headless-wordpress-blog`,
-        short_name: `headless-wp`,
+        name: `lucas-lombardo`,
+        short_name: `lucas-lombardo`,
         start_url: `/`,
         background_color: `#326eac`,
         theme_color: `#326eac`,

@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
-      query={detailsQuery}
+      query={METADATA_QUERY}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
@@ -16,7 +16,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={`${data.site.siteMetadata.title} <%s />`}
             meta={[
               {
                 name: `description`,
@@ -83,8 +83,8 @@ SEO.propTypes = {
 
 export default SEO
 
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
+const METADATA_QUERY = graphql`
+  query METADATA_QUERY {
     site {
       siteMetadata {
         title

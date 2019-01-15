@@ -9,7 +9,7 @@ export default class BlogPage extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Blog" keywords={[`lucas lombardo`, `blog`, `react`, `web development`, `javascript`, `jamstack`, `gatsby`, `developer`, `boston`, `coding`]} />
         <ScBlog>
           <Container>
             <header>

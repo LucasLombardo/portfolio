@@ -15,7 +15,7 @@ export default class IndexPage extends Component {
       <Layout isHome={true}>
         <SEO
           title="Home"
-          keywords={[`Lucas Lombardo`, `Portfolio`, `Web Development`]}
+          keywords={[`lucas lombardo`, `portfolio`, `web development`, `junior web developer`, `boston`, `greater boston`, `react`, `reactjs`, `blog`, `general assembly`, `javascript`]}
         />
         <Header />
         <a id="About" />
