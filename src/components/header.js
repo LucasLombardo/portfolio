@@ -12,12 +12,9 @@ const SvgChevron = () => (
   </svg>
 )
 
-/* eslint-disable */
-// anchor links are to positions, no href needed
-// TODO - check into screen reader a11y of this
-
 export default class Header extends Component {
-  scrollToAbout = () => {
+  scrollToAbout = e => {
+    e.preventDefault()
     window.scrollTo({
       top: document.querySelector('#About').offsetTop,
       behavior: 'smooth',
@@ -34,7 +31,7 @@ export default class Header extends Component {
                 <h1>{wordpressPage.acf.header_title}</h1>
                 <p>{wordpressPage.acf.header_subtitle}</p>
               </div>
-              <a onClick={this.scrollToAbout}>
+              <a onClick={this.scrollToAbout} href="#About">
                 <SvgChevron />
               </a>
             </>

@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { ScAbout } from '../styles/'
 import Card from './card'
 import Container from './container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-/* eslint-disable */
-// anchor links are to positions, no href needed
-// TODO - check into screen reader a11y of this
-
 export default class About extends Component {
-  scrollToWork = () => {
+  scrollToWork = e => {
+    e.preventDefault()
     window.scrollTo({
       top: document.querySelector('#Work').offsetTop,
       behavior: 'smooth',
@@ -50,10 +47,14 @@ export default class About extends Component {
                   Resume
                   <FontAwesomeIcon icon={faDownload} />
                 </a>
-                <a className="button secondary" onClick={this.scrollToWork}>
+                <Link
+                  className="button secondary"
+                  onClick={this.scrollToWork}
+                  to="#work"
+                >
                   Portfolio
                   <FontAwesomeIcon icon={faArrowDown} />
-                </a>
+                </Link>
               </Card>
             </Container>
           )}

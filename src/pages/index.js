@@ -7,23 +7,33 @@ import Projects from '../components/projects'
 import Contact from '../components/contact'
 import SEO from '../components/seo'
 
-/* eslint-disable */
-// anchor tags being used for reference, no accessibility problem
 export default class IndexPage extends Component {
   render() {
     return (
       <Layout isHome={true}>
         <SEO
           title="Home"
-          keywords={[`lucas lombardo`, `portfolio`, `web development`, `junior web developer`, `boston`, `greater boston`, `react`, `reactjs`, `blog`, `general assembly`, `javascript`]}
+          keywords={[
+            `lucas lombardo`,
+            `portfolio`,
+            `web development`,
+            `junior web developer`,
+            `boston`,
+            `greater boston`,
+            `react`,
+            `reactjs`,
+            `blog`,
+            `general assembly`,
+            `javascript`,
+          ]}
         />
         <Header />
-        <a id="About" />
+        <span id="About" />
         <About />
         <Skills />
-        <a id="Work" />
+        <span id="Work" />
         <Projects />
-        <a id="Contact" />
+        <span id="Contact" />
         <Contact action="/thanks/" />
       </Layout>
     )
