@@ -6,7 +6,6 @@ export const ScAbout = styled.section`
     no-repeat center center fixed;
   background-size: cover;
   padding: 7rem 0 8rem 0;
-  min-height: 100vh;
   text-align: center;
   color: #3f3f3f;
   .about-header:before {

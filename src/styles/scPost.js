@@ -36,8 +36,9 @@ export const ScPost = styled.main`
       .post-content {
         padding-bottom: 1.5rem;
       }
-      button {
+      .button {
         display: block;
+        width: fit-content;
         margin: 1rem auto;
         line-height: 2.6rem;
         padding: 0 1.6rem;

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { ScAbout } from '../styles/'
 import Card from './card'
-import Button from './button'
 import Container from './container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
@@ -43,20 +42,17 @@ export default class About extends Component {
                 content={acf.about_sec2_content}
               >
                 <a
+                  className="button primary"
                   href="https://res.cloudinary.com/dov1pamgz/image/upload/v1547494960/Resume_LombardoLucas.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button btnType="primary">
-                    Resume
-                    <FontAwesomeIcon icon={faDownload} />
-                  </Button>
+                  Resume
+                  <FontAwesomeIcon icon={faDownload} />
                 </a>
-                <a onClick={this.scrollToWork}>
-                  <Button btnType="secondary">
-                    Portfolio
-                    <FontAwesomeIcon icon={faArrowDown} />
-                  </Button>
+                <a className="button secondary" onClick={this.scrollToWork}>
+                  Portfolio
+                  <FontAwesomeIcon icon={faArrowDown} />
                 </a>
               </Card>
             </Container>

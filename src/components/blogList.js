@@ -1,7 +1,6 @@
 import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import { ScBlogList } from '../styles'
-import Button from './button'
 
 const BlogList = () => (
   <StaticQuery
@@ -17,8 +16,8 @@ const BlogList = () => (
                 <Link to={node.slug}>{node.title}</Link>
               </h2>
               <p>{node.acf.excerpt}</p>
-              <Link to={node.slug}>
-                <Button>Read More</Button>
+              <Link className="button" to={node.slug}>
+                Read More
               </Link>
             </article>
           ))}

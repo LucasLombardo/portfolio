@@ -17,7 +17,7 @@ export const ScBlogList = styled.section`
     p {
       color: #3f3f3f;
     }
-    button {
+    .button {
       margin-top: 1rem;
       line-height: 2.3rem;
       padding: 0 1.2rem;

@@ -28,7 +28,7 @@ export const ScCard = styled.div`
       line-height: 1.5rem;
     }
     .card-footer {
-      button {
+      .button {
         margin-top: 2.5rem;
         margin-right: 1rem;
       }
@@ -79,14 +79,6 @@ export const ScCard = styled.div`
     }
     .content {
       padding: 3.6rem 3rem;
-      h3 {
-      }
-      p {
-      }
-      .card-footer {
-        button {
-        }
-      }
     }
     @media screen and (max-width: 620px) {
       .image-wrapper {
@@ -96,7 +88,7 @@ export const ScCard = styled.div`
     .content .card-footer {
       display: flex;
       justify-content: center;
-      button {
+      .button {
         margin: 2rem 0.4rem 1rem 0.4rem;
         line-height: 2.6rem;
         font-size: 0.7rem;

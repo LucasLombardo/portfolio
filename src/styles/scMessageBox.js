@@ -19,7 +19,7 @@ export const ScMessageBox = styled.div`
     animation-duration: 0.3s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
-    button {
+    .button {
       margin-top: 1rem;
       .svg-inline--fa.fa-w-14 {
         margin-right: 0.4rem;

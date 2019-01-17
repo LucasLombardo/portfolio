@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from './container'
-import Button from './button'
 import { ScContact } from '../styles'
 
 const Contact = ({ action }) => (
@@ -61,9 +60,9 @@ const Contact = ({ action }) => (
           rows="8"
           required
         />
-        <Button type="submit" className="btn">
+        <button type="submit" className="btn button">
           Send Message
-        </Button>
+        </button>
         <input type="hidden" name="form-name" value="contact-me" />
       </form>
     </Container>

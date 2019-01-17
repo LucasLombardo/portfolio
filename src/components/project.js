@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './button'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 const Project = ({
@@ -26,12 +25,22 @@ const Project = ({
           ))}
         </p>
         <p className="description">{description}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <Button>Live Project</Button>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button"
+        >
+          Live Project
         </a>
         {code_link ? (
-          <a href={code_link} target="_blank" rel="noopener noreferrer">
-            <Button btnType="secondary">Project Code</Button>
+          <a
+            href={code_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button secondary"
+          >
+            Project Code
           </a>
         ) : (
           <p className="no-code">Private Repo, code available on request</p>

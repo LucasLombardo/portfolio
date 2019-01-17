@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import Container from '../components/container'
 import SEO from '../components/seo'
-import Button from '../components/button'
 import { ScPost } from '../styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -52,11 +51,9 @@ class PostTemplate extends Component {
                   className="post-content"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
-                <Link to="/blog">
-                  <Button>
-                    <FontAwesomeIcon icon={faArrowLeft} />
-                    Back to Blog
-                  </Button>
+                <Link to="/blog" className="button">
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                  Back to Blog
                 </Link>
               </div>
             </div>

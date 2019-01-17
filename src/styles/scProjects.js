@@ -58,7 +58,7 @@ export const ScProjects = styled.section`
       }
     }
     .project-info {
-      button {
+      .button {
         margin: 1rem 1rem 1rem 0;
         line-height: 2.6rem;
         padding: 0 1.6rem;
@@ -95,7 +95,7 @@ export const ScProjects = styled.section`
       }
     }
     @media only screen and (max-width: 480px) {
-      button {
+      .button {
         margin: 1rem 0.4rem 1rem 0;
         line-height: 2.6rem;
         font-size: 0.6rem;
@@ -103,7 +103,7 @@ export const ScProjects = styled.section`
       }
     }
     @media only screen and (max-width: 350px) {
-      button {
+      .button {
         margin: 1rem 0;
         font-size: 0.5rem;
         padding: 0;
