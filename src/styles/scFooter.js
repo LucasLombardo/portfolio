@@ -17,4 +17,24 @@ export const ScFooter = styled.footer`
       color: #3dc5ad;
     }
   }
+  .email {
+    display: inline;
+    position: relative;
+    div {
+      position: absolute;
+      left: -24px;
+      top: 0;
+      margin-top: 20px;
+      input {
+        width: 120px;
+        box-sizing: border-box;
+      }
+      .button {
+        line-height: 1.8rem;
+        padding: 0;
+        width: 120px;
+        margin-top: 5px;
+      }
+    }
+  }
 `
