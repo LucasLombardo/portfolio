@@ -42,7 +42,7 @@ const Contact = ({ action }) => (
             Email
           </label>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder="Email"

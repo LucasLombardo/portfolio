@@ -38,11 +38,11 @@ export const ScContact = styled.section`
     display: block;
     width: 100%;
     box-sizing: border-box;
-    font-style: italic;
-    color: #b2aaaa;
+    color: #3f3f3f;
     box-shadow: none;
     &::placeholder {
       color: #b2aaaa;
+      font-style: italic;
     }
   }
   .name-email {
