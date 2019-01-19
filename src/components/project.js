@@ -18,7 +18,7 @@ const Project = ({
           <h3>{title}</h3>
         </a>
         <p className="tags">
-          {tags.split(',').map(tag => (
+          {tags.map(({ tag }) => (
             <li key={tag}>
               <span>{tag}</span>
             </li>

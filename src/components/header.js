@@ -24,12 +24,12 @@ export default class Header extends Component {
     return (
       <ScHeader>
         <StaticQuery
-          query={HOME_PAGE_QUERY}
-          render={({ wordpressPage }) => (
+          query={HEADER_QUERY}
+          render={({ wordpressPage: { acf } }) => (
             <>
               <div className="content">
-                <h1>{wordpressPage.acf.header_title}</h1>
-                <p>{wordpressPage.acf.header_subtitle}</p>
+                <h1>{acf.header.title}</h1>
+                <p>{acf.header.subtitle}</p>
               </div>
               <a onClick={this.scrollToAbout} href="#About">
                 <SvgChevron />
@@ -42,12 +42,14 @@ export default class Header extends Component {
   }
 }
 
-const HOME_PAGE_QUERY = graphql`
-  query HOME_PAGE_QUERY {
+const HEADER_QUERY = graphql`
+  query HEADER_QUERY {
     wordpressPage(slug: { eq: "home" }) {
       acf {
-        header_title
-        header_subtitle
+        header {
+          title
+          subtitle
+        }
       }
     }
   }

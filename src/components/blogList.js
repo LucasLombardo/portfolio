@@ -7,20 +7,18 @@ const BlogList = () => (
     query={BLOG_LIST_QUERY}
     render={({ allWordpressPost: { edges } }) => (
       <ScBlogList>
-        {edges
-          .filter(({ node }) => node.format !== 'aside')
-          .map(({ node }) => (
-            <article key={node.id}>
-              <p className="date">{node.date}</p>
-              <h2>
-                <Link to={node.slug}>{node.title}</Link>
-              </h2>
-              <p>{node.acf.excerpt}</p>
-              <Link className="button" to={node.slug}>
-                Read More
-              </Link>
-            </article>
-          ))}
+        {edges.map(({ node }) => (
+          <article key={node.id}>
+            <p className="date">{node.date}</p>
+            <h2>
+              <Link to={node.slug}>{node.title}</Link>
+            </h2>
+            <p>{node.acf.excerpt}</p>
+            <Link className="button" to={node.slug}>
+              Read More
+            </Link>
+          </article>
+        ))}
       </ScBlogList>
     )}
   />

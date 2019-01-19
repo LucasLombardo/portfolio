@@ -11,23 +11,23 @@ const Skills = () => (
       render={({ wordpressPage: { acf } }) => (
         <Container>
           <header>
-            <h2>Top Skills</h2>
+            <h2>{acf.skills.title}</h2>
           </header>
           <div className="skills-wrapper">
             <Skill
-              title={acf.s1_title}
-              desc={acf.s1_description}
-              thumb={acf.s1_thumbnail}
+              title={acf.skills.s1.title}
+              desc={acf.skills.s1.description}
+              thumb={acf.skills.s1.thumbnail}
             />
             <Skill
-              title={acf.s2_title}
-              desc={acf.s2_description}
-              thumb={acf.s2_thumbnail}
+              title={acf.skills.s2.title}
+              desc={acf.skills.s2.description}
+              thumb={acf.skills.s2.thumbnail}
             />
             <Skill
-              title={acf.s3_title}
-              desc={acf.s3_description}
-              thumb={acf.s3_thumbnail}
+              title={acf.skills.s3.title}
+              desc={acf.skills.s3.description}
+              thumb={acf.skills.s3.thumbnail}
             />
           </div>
         </Container>
@@ -38,17 +38,26 @@ const Skills = () => (
 
 const SKILLS_QUERY = graphql`
   query SKILLS_QUERY {
-    wordpressPage(slug: { eq: "skills" }) {
+    wordpressPage(slug: { eq: "home" }) {
       acf {
-        s1_title
-        s1_thumbnail
-        s1_description
-        s2_title
-        s2_thumbnail
-        s2_description
-        s3_title
-        s3_thumbnail
-        s3_description
+        skills {
+          title
+          s1 {
+            title
+            thumbnail
+            description
+          }
+          s2 {
+            title
+            thumbnail
+            description
+          }
+          s3 {
+            title
+            thumbnail
+            description
+          }
+        }
       }
     }
   }

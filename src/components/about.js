@@ -19,24 +19,23 @@ export default class About extends Component {
     return (
       <ScAbout>
         <StaticQuery
-          query={ABOUT_SECTION_QUERY}
+          query={ABOUT_QUERY}
           render={({ wordpressPage: { acf } }) => (
             <Container>
               <div className="about-header">
-                <h2>{acf.about_title}</h2>
-                <p>{acf.about_subtitle}</p>
+                <h2>{acf.about.title}</h2>
               </div>
               <Card
-                src={acf.about_sec1_thumbnail}
-                title={acf.about_sec1_title}
-                content={acf.about_sec1_content}
+                src={acf.about.sec1.thumbnail}
+                title={acf.about.sec1.title}
+                content={acf.about.sec1.body}
                 right={false}
               />
               <Card
-                src={acf.about_sec2_thumbnail}
+                src={acf.about.sec2.thumbnail}
                 right={true}
-                title={acf.about_sec2_title}
-                content={acf.about_sec2_content}
+                title={acf.about.sec2.title}
+                content={acf.about.sec2.body}
               >
                 <a
                   className="button primary"
@@ -64,15 +63,23 @@ export default class About extends Component {
   }
 }
 
-const ABOUT_SECTION_QUERY = graphql`
-  query ABOUT_SECTION_QUERY {
+const ABOUT_QUERY = graphql`
+  query ABOUT_QUERY {
     wordpressPage(slug: { eq: "home" }) {
       acf {
-        about_title
-        about_sec1_thumbnail
-        about_sec1_content
-        about_sec2_thumbnail
-        about_sec2_content
+        about {
+          title
+          sec1 {
+            thumbnail
+            title
+            body
+          }
+          sec2 {
+            thumbnail
+            title
+            body
+          }
+        }
       }
     }
   }

@@ -32,40 +32,55 @@ export default class Footer extends Component {
           query={FOOTER_QUERY}
           render={({ wordpressPage: { acf } }) => (
             <>
-              {acf.twitter && (
-                <a href={acf.twitter} target="_blank" rel="noopener noreferrer">
+              {acf.footer.twitter && (
+                <a
+                  href={acf.footer.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={['fab', 'twitter']} />
                 </a>
               )}
-              {acf.github && (
-                <a href={acf.github} target="_blank" rel="noopener noreferrer">
+              {acf.footer.github && (
+                <a
+                  href={acf.footer.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={['fab', 'github']} />
                 </a>
               )}
-              {acf.codepen && (
-                <a href={acf.codepen} target="_blank" rel="noopener noreferrer">
+              {acf.footer.codepen && (
+                <a
+                  href={acf.footer.codepen}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={['fab', 'codepen']} />
                 </a>
               )}
-              {acf.linkedin && (
+              {acf.footer.linkedin && (
                 <a
-                  href={acf.linkedin}
+                  href={acf.footer.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={['fab', 'linkedin']} />
                 </a>
               )}
-              {acf.email && (
+              {acf.footer.email && (
                 <div className="email">
-                  <a href={`mailto:${acf.email}`} onClick={this.toggleEmail}>
+                  <a
+                    href={`mailto:${acf.footer.email}`}
+                    onClick={this.toggleEmail}
+                  >
                     <FontAwesomeIcon icon={faEnvelope} />
                   </a>
                   {this.state.displayEmail && (
                     <div className="email-copy">
                       <input
                         type="text"
-                        value={acf.email}
+                        value={acf.footer.email}
                         ref={this.emailInput}
                         readOnly
                       />
@@ -76,7 +91,10 @@ export default class Footer extends Component {
                   )}
                 </div>
               )}
-              <p>{acf.copyright}</p>
+              <p>
+                Copyright © {new Date().getFullYear()} Lucas Lombardo. All
+                rights reserved.
+              </p>
             </>
           )}
         />
@@ -87,14 +105,15 @@ export default class Footer extends Component {
 
 const FOOTER_QUERY = graphql`
   query FOOTER_QUERY {
-    wordpressPage(slug: { eq: "footer" }) {
+    wordpressPage(slug: { eq: "home" }) {
       acf {
-        copyright
-        twitter
-        github
-        linkedin
-        codepen
-        email
+        footer {
+          twitter
+          github
+          linkedin
+          codepen
+          email
+        }
       }
     }
   }

@@ -7,16 +7,16 @@ import Container from './container'
 const Projects = () => (
   <ScProjects>
     <StaticQuery
-      query={PROJECT_POST_QUERY}
-      render={({ allWordpressPost: { edges } }) => (
+      query={PROJECTS_QUERY}
+      render={({ wordpressPage: { acf } }) => (
         <Container>
           <header>
             <h2>Projects</h2>
           </header>
-          {edges.map(({ node }, i) => (
+          {acf.projects.map((project, i) => (
             <Project
-              info={node.acf}
-              key={node.id}
+              info={project}
+              key={project.title}
               right={i % 2 === 0 ? '' : 'right'}
             />
           ))}
@@ -26,23 +26,18 @@ const Projects = () => (
   </ScProjects>
 )
 
-// Posts saved as Format: aside
-const PROJECT_POST_QUERY = graphql`
-  query PROJECT_POST_QUERY {
-    allWordpressPost(
-      filter: { format: { eq: "aside" } }
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          acf {
-            title
-            thumbnail
-            description
-            link
-            tags
-            code_link
+const PROJECTS_QUERY = graphql`
+  query PROJECTS_QUERY {
+    wordpressPage(slug: { eq: "home" }) {
+      acf {
+        projects {
+          title
+          thumbnail
+          description
+          link
+          code_link
+          tags {
+            tag
           }
         }
       }
