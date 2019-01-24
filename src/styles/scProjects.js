@@ -54,7 +54,8 @@ export const ScProjects = styled.section`
         max-width: 330px;
       }
       &:hover {
-        opacity: 0.8;
+        filter: saturate(0.7);
+        transform: rotate(-1.5deg);
       }
     }
     .project-info {
@@ -77,6 +78,9 @@ export const ScProjects = styled.section`
       flex-direction: row-reverse;
       img {
         margin: 0 0 0 3rem;
+        &:hover {
+          transform: rotate(1.5deg);
+        }
       }
     }
 
@@ -85,9 +89,12 @@ export const ScProjects = styled.section`
       justify-content: center;
       justify-items: center;
       max-width: 500px;
-      margin: 6rem auto;
+      margin: 6rem auto 0 auto;
       &:first-of-type {
         margin-top: 5rem;
+      }
+      h3 {
+        margin-top: 1rem;
       }
       a > img {
         max-width: 100%;
