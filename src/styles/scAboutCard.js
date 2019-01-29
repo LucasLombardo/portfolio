@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ScCard = styled.div`
+export const ScAboutCard = styled.div`
   background: #fff;
   margin-top: 3rem;
   display: flex;

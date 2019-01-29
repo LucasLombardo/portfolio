@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { ScAbout } from '../styles/'
-import Card from './card'
+import AboutCard from './aboutCard'
 import Container from './container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
@@ -25,13 +25,13 @@ export default class About extends Component {
               <div className="about-header">
                 <h2>{acf.about.title}</h2>
               </div>
-              <Card
+              <AboutCard
                 src={acf.about.sec1.thumbnail}
                 title={acf.about.sec1.title}
                 content={acf.about.sec1.body}
                 right={false}
               />
-              <Card
+              <AboutCard
                 src={acf.about.sec2.thumbnail}
                 right={true}
                 title={acf.about.sec2.title}
@@ -54,7 +54,7 @@ export default class About extends Component {
                   Portfolio
                   <FontAwesomeIcon icon={faArrowDown} />
                 </Link>
-              </Card>
+              </AboutCard>
             </Container>
           )}
         />

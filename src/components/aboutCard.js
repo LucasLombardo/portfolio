@@ -1,13 +1,13 @@
 import React from 'react'
-import { ScCard } from '../styles/'
+import { ScAboutCard } from '../styles'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-const Card = ({ src, title, content, right, children }) => (
+const AboutCard = ({ src, title, content, right, children }) => (
   <ScrollAnimation
     animateIn={right ? 'rotate-in-right' : 'rotate-in-left'}
     animateOnce={true}
   >
-    <ScCard className={right ? 'right' : 'left'}>
+    <ScAboutCard className={right ? 'right' : 'left'}>
       <div className="image-wrapper">
         <img src={src} alt={title} />
       </div>
@@ -16,8 +16,8 @@ const Card = ({ src, title, content, right, children }) => (
         {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
         <div className="card-footer">{children}</div>
       </div>
-    </ScCard>
+    </ScAboutCard>
   </ScrollAnimation>
 )
 
-export default Card
+export default AboutCard
