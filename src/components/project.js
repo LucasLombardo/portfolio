@@ -17,13 +17,13 @@ const Project = ({
         <a href={link} target="_blank" rel="noopener noreferrer">
           <h3>{title}</h3>
         </a>
-        <p className="tags">
+        <ul className="tags">
           {tags.map(({ tag }) => (
             <li key={tag}>
               <span>{tag}</span>
             </li>
           ))}
-        </p>
+        </ul>
         <p className="description">{description}</p>
         <a
           href={link}
